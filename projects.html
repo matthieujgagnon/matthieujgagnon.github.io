@@ -5,33 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects - Matthieu Gagnon</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-<body>
+<body class="projects-page">
     <header>
         <nav>
-            <ul>
+            <ul id="nav-links">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="matthieujgagnon.html">Matthieu J Gagnon</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="matthieujgagnon.html">About Me</a></li>
+                <li><a href="projects.html" class="active">Projects</a></li>
+                <li><a href="contact.html">Let's Talk</a></li>
             </ul>
+            <div class="menu-toggle" id="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
         </nav>
     </header>
-    <section id="projects">
-        <h2>Projects</h2>
-        <div class="project-card">
-            <h3>Sonia St-Michel</h3>
-            <p>Short description of the project.</p>
-        </div>
-        <div class="project-card">
-            <h3>Cinthia Plouffe</h3>
-            <p>Short description of the project.</p>
-        </div>
-    </section>
+
+    <main>
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="project-list">
+                <div class="project-card">
+                    <h3>Sonia St-Michel</h3>
+                    <p>Short description of the project.</p>
+                </div>
+                <div class="project-card">
+                    <h3>Cinthia Plouffe</h3>
+                    <p>Short description of the project.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
     <footer>
         <p>&copy; 2024 Matthieu Gagnon. All rights reserved.</p>
     </footer>
+
+    <script src="js/main.js"></script>
 </body>
 </html>

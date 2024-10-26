@@ -5,42 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Matthieu Gagnon - Portfolio</title>
     <link rel="stylesheet" href="styles.css">
-    <!-- Import Poppins Font -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <!-- Import Font Awesome for Social Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body>
-  <header>
-      <nav>
-          <ul>
-              <li><a href="index.html">Home</a></li>
-              <li><a href="matthieujgagnon.html">Matthieu J Gagnon</a></li>
-              <li><a href="projects.html">Projects</a></li>
-              <li><a href="contact.html">Contact</a></li>
-          </ul>
-      </nav>
-  </header>
+<body class="home-page">
+    <header>
+        <nav>
+            <ul id="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="matthieujgagnon.html">About Me</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html">Let's Talk</a></li>
+            </ul>
+            <div class="menu-toggle" id="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
 
-    <section id="home" class="hero">
-        <div class="intro-text">
-            <span class="greeting">this is...</span>
-            <h1> Matthieu <strong> Joshua </strong>Gagnon</h1>
-            <p>I'm a Digital Development Coordinator, visual designer, and passionate about building creative digital experiences. With a focus on arts, digital tools, and team coordination, I am based in Montreal and open to opportunities around the globe.</p>
-            <a href="#cv" class="btn-download">Download My CV</a>
-        </div>
-        <div class="hero-image">
-            <img src="your-image-path.jpg" alt="Matthieu Gagnon portrait">
-        </div>
-        <div class="social-icons">
-            <a href="https://www.linkedin.com/in/your-profile" target="_blank"><i class="fa fa-linkedin"></i></a>
-            <a href="https://github.com/your-profile" target="_blank"><i class="fa fa-github"></i></a>
-            <a href="https://twitter.com/your-profile" target="_blank"><i class="fa fa-twitter"></i></a>
-        </div>
-    </section>
+    <main class="container">
+        <section class="hero parallax">
+            <div class="hero-content">
+                <span class="greeting">this is...</span>
+                <h1>Matthieu <strong>Joshua</strong> Gagnon</h1>
+                <p>Problem-solver fueled by chaos & art, lifelong learner crafting digital experiences.</p>
+                <div class="contact-container">
+                    <a href="contact.html" class="btn-download">Let's talk</a>
+                    <div class="social-icons-container">
+                        <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="images/matthieu-portrait.jpg" alt="Matthieu Gagnon portrait">
+            </div>
+        </section>
+    </main>
 
     <footer>
         <p>&copy; 2024 Matthieu Gagnon. All rights reserved.</p>
     </footer>
+
+    <script>
+        window.addEventListener('scroll', () => {
+            const scrolled = window.scrollY;
+            document.querySelector('.parallax').style.backgroundPositionY = `${scrolled * 0.5}px`;
+        });
+    </script>
+    <script src="main.js"></script>
 </body>
 </html>
