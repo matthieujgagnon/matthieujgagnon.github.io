@@ -1,25 +1,27 @@
+/* Import Poppins from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
 /* General Styles */
 body {
-    font-family: 'Roboto', sans-serif;
-    line-height: 1.6;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: #f4f4f4;
-    color: #333;
 }
 
 /* Header & Navigation */
 header {
     background-color: #333;
-    color: #fff;
-    padding: 1rem;
+    padding: 1rem 0;
     text-align: center;
 }
 
 nav ul {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
 nav ul li {
@@ -30,37 +32,95 @@ nav ul li {
 nav ul li a {
     color: #fff;
     text-decoration: none;
+    font-weight: 600;
+}
+
+nav ul li a:hover {
+    color: #0906fa; /* Highlight color on hover */
 }
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(to right, #1e90ff, #00ced1);
-    color: #fff;
-    padding: 100px 20px;
-    text-align: center;
-    animation: fadeIn 2s ease-in;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 100px 50px;
+    background: #e8e8f4;  /* Light background for contrast */
+    position: relative;
 }
 
-@keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
+.intro-text {
+    max-width: 50%;
+}
+
+.greeting {
+    display: block;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #888;
+    margin-bottom: 10px;
 }
 
 .hero h1 {
-    font-size: 3em;
+    font-size: 4em;
+    margin: 0;
 }
 
-/* Sections */
-section {
-    padding: 60px 20px;
+.hero h1 strong {
+    color: #0906fa;  /* Highlighted part of the name */
+    font-weight: 600;
 }
 
-#projects .project-card {
-    background: #fff;
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+.hero p {
+    font-size: 1.2em;
+    color: #666;
+    margin: 20px 0;
+}
+
+.btn-download {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 15px 30px;
+    background-color: #0906fa;  /* Button color */
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 30px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-download:hover {
+    background-color: #0705c4;  /* Darker shade on hover */
+}
+
+/* Hero Image */
+.hero-image {
+    max-width: 40%;
+}
+
+.hero-image img {
+    max-width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Social Icons */
+.social-icons {
+    position: absolute;
+    bottom: 20px;
+    left: 50px;
+}
+
+.social-icons a {
+    font-size: 1.5em;
+    color: #333;
+    margin-right: 15px;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #0906fa;  /* Highlight color for social icons */
 }
 
 /* Footer */
@@ -68,52 +128,24 @@ footer {
     background-color: #333;
     color: #fff;
     text-align: center;
-    padding: 1rem;
-    position: relative;
-    bottom: 0;
-    width: 100%;
+    padding: 1rem 0;
+    margin-top: 50px;
 }
 
-/* Media Queries */
-
-/* Tablet - min-width 768px */
-@media (min-width: 768px) {
-    nav ul li {
-        display: inline-block;  /* Display items side by side for tablets and larger */
-        margin: 0 15px;
-    }
-
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
     .hero {
-        padding: 150px 20px;  /* Increase padding for larger screens */
+        flex-direction: column;
+        text-align: center;
+        padding: 50px 20px;
     }
 
-    .hero h1 {
-        font-size: 4em;  /* Increase font size for tablets */
+    .intro-text, .hero-image {
+        max-width: 100%;
     }
 
-    #projects .project-card {
-        width: calc(50% - 40px);  /* Display 2 cards per row */
-        margin: 20px;
-        display: inline-block;
-        vertical-align: top;
-    }
-}
-
-/* Desktop - min-width 1024px */
-@media (min-width: 1024px) {
-    header {
-        padding: 2rem;  /* Increase padding for desktop screens */
-    }
-
-    .hero {
-        padding: 200px 20px;  /* More padding for a spacious look */
-    }
-
-    .hero h1 {
-        font-size: 5em;  /* Larger font size for hero section */
-    }
-
-    #projects .project-card {
-        width: calc(33.333% - 40px);  /* Display 3 cards per row */
+    .social-icons {
+        position: relative;
+        margin-top: 20px;
     }
 }
