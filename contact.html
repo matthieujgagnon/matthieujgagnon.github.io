@@ -3,58 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - Matthieu Gagnon</title>
+    <title>this is... Matthieu J Gagnon | Contact</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body class="contact-page">
-    <header>
-        <nav>
-            <ul id="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="matthieujgagnon.html">About Me</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="contact.html" class="active">Let's Talk</a></li>
-            </ul>
-            <div class="menu-toggle" id="mobile-menu">
-                <i class="fas fa-bars"></i>
-            </div>
-        </nav>
-    </header>
+<body>
 
+<!-- Header Section -->
+<header class="header">
+    <h1 class="site-title"><a href="index.html">this is...</a></h1>
+    <nav>
+        <ul class="nav-list">
+            <li><a href="matthieujgagnon.html">matthieu j gagnon</a></li>
+            <li><a href="projects.html">projects</a></li>
+            <li><a href="contact.html">contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+
+    <!-- Main Section -->
     <main>
-        <section class="contact-hero-large-text">
-            <h1>Let's build, break, and make stuff <strong>together.</strong></h1>
-            <form class="hero-form">
-                <input type="text" name="name" placeholder="Name" required>
-                <input type="email" name="email" placeholder="Email" required>
-                <input type="text" name="company" placeholder="Company Name" required>
-                <button type="submit" class="btn-submit">Get in Touch</button>
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <p>Feel free to get in touch for collaboration or inquiries.</p>
+            <form action="#" method="post">
+                <label for="first-name">First Name:</label>
+                <input type="text" id="first-name" name="first-name" required><br>
+                <label for="last-name">Last Name:</label>
+                <input type="text" id="last-name" name="last-name" required><br>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br>
+                <label for="message">Message:</label><br>
+                <textarea id="message" name="message" rows="5" required></textarea><br>
+                <button type="submit">Send Message</button>
             </form>
-        </section>
-
-        <section class="contact-grid">
-            <div class="grid-item">
-                <h2>Location</h2>
-                <p>Montreal, Quebec, Canada</p>
-            </div>
-            <div class="grid-item">
-                <h2>Contact</h2>
-                <p><strong>Phone:</strong> +1 (514) 435-3000</p>
-                <p><strong>Email:</strong> <a href="mailto:matthieujgagnon@me.com">matthieujgagnon@me.com</a></p>
-            </div>
-            <div class="grid-item">
-                <h2>Social Media</h2>
-                <div class="social-icons">
-                    <a href="https://www.linkedin.com/in/matthieujgagnon/"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://github.com/matthieujgagnon"><i class="fab fa-github"></i></a>
-                    <a href="https://www.instagram.com/matthieujoshuagagnon/"><i class="fab fa-instagram"></i></a>
-                </div>
-            </div>
+            <h3>My Contact Information</h3>
+            <p>Email: <a href="mailto:matthieujgagnon@me.com">matthieujgagnon@me.com</a></p>
+            <p>Phone: +1 (514) 435-3000</p>
+            <h3>Follow Me</h3>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/matthieujgagnon" target="_blank">linkedin.com/in/matthieujgagnon</a></p>
+            <p>Instagram: <a href="https://www.instagram.com/matthieujoshuagagnon" target="_blank">instagram.com/matthieujoshuagagnon</a></p>
         </section>
     </main>
 
+    <!-- Footer Section -->
     <footer>
-        <p>&copy; 2024 Matthieu Gagnon. All rights reserved.</p>
+        <p>&copy; 2024 Matthieu J Gagnon. All rights reserved.</p>
     </footer>
 
     <script src="js/main.js"></script>
