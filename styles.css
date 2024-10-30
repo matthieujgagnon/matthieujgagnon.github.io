@@ -1,193 +1,232 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap'); /* Importing the Poppins font */
 
 /* General Reset */
+/* Removes default browser margins and padding to ensure consistent layout */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box; /* Ensures padding and borders don't affect element width/height */
 }
 
+/* Base Body Styling */
+/* Sets the base font, background color, and padding for the whole page */
 body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #f0f0f0;
-    line-height: 1.6;
-    padding: 1rem;
+    font-family: 'Poppins', sans-serif; /* Sets the font to Poppins */
+    background-color: #f0f0f0; /* Light gray background for better contrast */
+    line-height: 1.6; /* Improves text readability by increasing line spacing */
+    padding: 1rem; /* Adds padding to avoid content touching the edges of the screen */
 }
 
 /* Header Styling */
+/* Positions the header elements (title and hamburger icon) horizontally */
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem;
-    background-color: #333;
-    color: white;
+    display: flex; /* Enables Flexbox layout for alignment */
+    justify-content: space-between; /* Pushes items to opposite ends */
+    align-items: center; /* Vertically centers items */
+    padding: 1rem; /* Adds padding inside the header */
+    color: white; /* Sets text color to white for better contrast */
 }
 
-/* Site Title */
+/* Site Title Styling */
+/* Controls the appearance of the site title link */
 .site-title a {
-    text-decoration: none;
-    color: white;
-    font-weight: 600;
-    font-size: 1.8rem;
+    text-decoration: none; /* Removes underline from the link */
+    color: #0906fa; /* Blue color for the site title */
+    font-weight: 600; /* Semi-bold weight to highlight the title */
+    font-size: 2rem; /* Large font size for visibility */
 }
 
 /* Hamburger Icon (Visible only on Mobile) */
+/* Controls the styling of the hamburger menu for smaller screens */
 .hamburger {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    cursor: pointer;
-    position: relative;
-    z-index: 10;
+    display: flex; /* Flexbox layout to stack the bars vertically */
+    flex-direction: column; /* Aligns bars in a vertical column */
+    gap: 5px; /* Adds space between bars */
+    cursor: pointer; /* Changes the cursor to indicate interactivity */
+    position: relative; /* Allows the hamburger to stay above other content */
+    z-index: 10; /* Ensures it's above other elements when needed */
 }
 
+/* Individual bars inside the hamburger icon */
 .hamburger span {
     display: block;
-    width: 30px;
-    height: 3px;
-    background-color: white;
-    transition: all 0.8s ease-in-out;
+    width: 30px; /* Width of the hamburger bar */
+    height: 3px; /* Height of the hamburger bar */
+    background-color: #0906fa; /* Blue color for visibility */
+    transition: all 0.8s ease-in-out; /* Smooth animation when the menu toggles */
 }
 
-/* Hide Hamburger Icon on Desktop */
+/* Active state of the hamburger (when clicked) */
+.hamburger.active span {
+    background-color: white; /* Changes bar color when active */
+}
+
+/* Hides the hamburger menu on larger screens */
 @media (min-width: 768px) {
     .hamburger {
-        display: none;
+        display: none; /* Makes the hamburger invisible on desktops */
     }
 }
 
-/* Hamburger Active State for Animation */
+/* Animation for transforming the bars into an 'X' shape */
 .hamburger.active span:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
+    transform: translateY(8px) rotate(45deg); /* Rotates first bar */
 }
-
 .hamburger.active span:nth-child(2) {
-    opacity: 0;
+    opacity: 0; /* Hides the middle bar */
 }
-
 .hamburger.active span:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
+    transform: translateY(-8px) rotate(-45deg); /* Rotates third bar */
 }
 
-/* Navigation Menu */
+/* Navigation Menu Styling */
+/* Controls the full-screen menu that slides in on mobile */
 .nav-menu {
-    visibility: hidden; /* Hidden by default on mobile */
-    flex-direction: column;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #0906fa;
-    justify-content: center;
-    align-items: center;
-    z-index: 9;
-    opacity: 0;
-    transform: scale(0.95);
-    transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out, visibility 0s 0.8s;
+    visibility: hidden; /* Hidden by default */
+    flex-direction: column; /* Stacks menu items vertically */
+    position: fixed; /* Stays fixed in place on scroll */
+    top: 10%; /* Leaves space at the top for better alignment */
+    left: 5%; /* Adds space on the left for aesthetics */
+    width: 90%; /* Width of the menu */
+    height: 80%; /* Height of the menu */
+    background-color: #0906fa; /* Blue background */
+    justify-content: center; /* Centers menu items vertically */
+    align-items: center; /* Centers menu items horizontally */
+    z-index: 9; /* Below the hamburger icon */
+    opacity: 0; /* Invisible initially */
+    border-radius: 20px; /* Rounded corners */
+    transform: scale(0.8); /* Scaled down initially */
+    transition: all 0.8s ease-in-out; /* Smooth transition on activation */
+    padding-top: 4rem; /* Adds space at the top */
 }
 
+/* Navigation List Styling */
+/* Controls the appearance of each item in the menu */
 .nav-list {
-    list-style: none;
-    text-align: center;
-    border: greenyellow 1px solid;
-    margin: 1rem;
-    height: 100%;
-
+    list-style: none; /* Removes default bullet points */
+    text-align: center; /* Centers text inside the menu */
+    margin: 1rem; /* Adds space between list items */
 }
 
 .nav-list a {
-    list-style: none;
-    text-decoration: none;
-    color: white;
-    font-size: 2rem; /* Increased font size for mobile menu */
-    transition: color 0.5s ease;
-    border: orangered 1rem solid;
-    display: inline-block;
+    text-decoration: none; /* Removes underline from links */
+    color: #0906fa; /* White text for better contrast */
+    font-size: 2rem; /* Large font size for readability */
+    transition: all 0.8s ease-in-out; /* Smooth color and scale transition on hover */
+    display: inline-block; /* Ensures padding applies to the whole link */
 }
 
+/* Animation: Slide-in effect for list items */
 .nav-list li {
-    border: #f0f0f0 1px solid;
-    border: purple 1px solid;
-    padding: 1rem;
-    height: min-content
-    
+    margin-bottom: 1.2rem; /* Space between items */
+    transform: translateY(50px); /* Starts slightly off-screen */
+    opacity: 0; /* Hidden initially */
+    transition: all 0.8s ease-in-out; /* Smooth slide and fade */
 }
 
+/* Active state: List items move into place */
+.nav-menu.active .nav-list li {
+    transform: translateY(0); /* Moves to original position */
+    opacity: 1; /* Becomes visible */
+}
+
+/* Hover effect: Color change and slight zoom */
 .nav-list a:hover {
-    color: #aaa;
+    color: #ffcc00; /* Yellow on hover */
+    transform: scale(1.1); /* Zooms slightly */
 }
 
-/* Active State for the Navigation (Mobile) */
+/* Active Navigation Menu (Mobile) */
+/* Full-screen menu appearance */
 .nav-menu.active {
-    visibility: visible; /* Make visible when active */
+    visibility: visible;
     opacity: 1;
-    transform: scale(1);
-    transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+    transform: scale(1); /* Returns to normal size */
+    border-radius: 0; /* Removes rounded corners */
+    top: 0;
+    left: 0;
+    width: 100%; /* Covers full screen */
+    height: 100%; /* Covers full screen */
+    border: #0906fa solid 1rem; /* White border */
+    font-weight: 900; /* Bold text */
 }
 
-/* Navigation Menu Always Visible on Desktop */
+/* Inactive State: Scaling down with rounded corners */
+.nav-menu.inactive {
+    visibility: visible;
+    opacity: 1;
+    border-radius: 20px;
+    transform: scale(0.8);
+    transition: all 0.8s ease-in-out;
+}
+
+/* Desktop Menu: Always visible and horizontal */
 @media (min-width: 768px) {
     .nav-menu {
         display: flex;
         position: static;
-        flex-direction: row;
-        gap: 2rem;
+        flex-direction: row; /* Horizontal layout */
+        gap: 2rem; /* Space between items */
         width: auto;
         height: auto;
-        background-color: transparent;
+        background-color: transparent; /* No background */
         opacity: 1;
-        transform: none;
-    }
-
-    .header {
-        flex-direction: row;
-        justify-content: space-between;
     }
 }
 
 /* Hero Section */
+/* Controls the layout and appearance of the hero section */
 .hero {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    gap: 1rem;
-    margin-top: 2rem;
+    gap: 1rem; /* Space between elements */
 }
 
+/* Heading inside the Hero Section */
 .hero-text h2 {
-    font-weight: 400;
-    font-size: 1.8rem;
-    margin-bottom: 0.5rem;
+    letter-spacing: -0.3rem; /* Slightly tighter spacing */
+    font-weight: 900; /* Bold font */
+    font-size: 5rem; /* Large font size */
+    margin-bottom: 0.5rem; /* Space below heading */
+    text-align: right; /* Aligns to the right */
+    line-height: 1.2;
 }
 
+/* Styled Initial Letter */
+.hero-text .initial {
+    letter-spacing: -0.3rem;
+    color: #0906fa;
+}
+
+/* Paragraph Styling */
 .hero-text p {
-    font-size: 1rem;
+    font-size: 1.5rem;
     padding: 0 1rem;
-    margin-bottom: 1rem;
+    margin: 2rem 0;
+    text-align: left;
 }
 
+/* Buttons in Hero Section */
 .hero-buttons .button {
-    display: inline-block;
-    margin: 0.5rem;
+    margin: 1rem;
     padding: 0.8rem 1.2rem;
-    background-color: #333;
+    background-color: #0906fa;
     color: white;
     text-decoration: none;
     border-radius: 5px;
     font-size: 1rem;
 }
 
-/* Hero Image */
+/* Hero Image Styling */
 .hero-content img {
     max-width: 100%;
     height: auto;
     border-radius: 10px;
 }
 
-/* Footer */
+/* Footer Styling */
 footer {
     text-align: center;
     padding: 1rem;
@@ -196,12 +235,13 @@ footer {
     margin-top: 2rem;
 }
 
-/* Media Query for Desktop */
+/* Desktop Layout Adjustments */
 @media (min-width: 768px) {
     .hero {
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
+        padding: 0.5rem 1rem;
     }
 
     .hero-text {

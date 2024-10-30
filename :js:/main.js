@@ -4,7 +4,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Toggle menu on mobile
     hamburger.addEventListener('click', () => {
-        hamburger.classList.toggle('active');
+        hamburger.classListconst hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+        
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+        .toggle('active');
         navMenu.classList.toggle('active');
     });
 
