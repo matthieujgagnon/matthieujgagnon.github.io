@@ -110,7 +110,7 @@ body {
 
 .nav-list a {
     text-decoration: none; /* Removes underline from links */
-    color: #0906fa; /* White text for better contrast */
+    color: white; /* White text for better contrast */
     font-size: 2rem; /* Large font size for readability */
     transition: all 0.8s ease-in-out; /* Smooth color and scale transition on hover */
     display: inline-block; /* Ensures padding applies to the whole link */
