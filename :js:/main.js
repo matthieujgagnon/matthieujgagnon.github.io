@@ -2,22 +2,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const hamburger = document.getElementById('hamburger');
     const navMenu = document.getElementById('nav-menu');
 
-    // Toggle menu on mobile
+    // Toggle menu on mobile only
     hamburger.addEventListener('click', () => {
-        hamburger.classListconst hamburger = document.getElementById('hamburger');
-        const navMenu = document.getElementById('nav-menu');
-        
-        hamburger.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-        });
-        .toggle('active');
+        hamburger.classList.toggle('active');
         navMenu.classList.toggle('active');
     });
 
-    // Ensure menu is always visible on desktop
+    // Ensure menu resets properly on desktop
     window.addEventListener('resize', () => {
         if (window.innerWidth >= 768) {
-            navMenu.classList.remove('active'); // Always visible on desktop
+            navMenu.classList.remove('active'); // Ensure the menu is visible on desktop
+            navMenu.style.display = 'flex'; // Keeps it static on desktop
         }
     });
 });

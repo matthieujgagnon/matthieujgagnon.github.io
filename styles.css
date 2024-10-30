@@ -1,206 +1,188 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap'); /* Importing the Poppins font */
 
-/* General Reset */
-/* Removes default browser margins and padding to ensure consistent layout */
+/* ========== GENERAL RESET AND BASE STYLING ========== */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* Ensures padding and borders don't affect element width/height */
+    box-sizing: border-box; /* Ensures padding and borders don't affect width/height */
 }
 
-/* Base Body Styling */
-/* Sets the base font, background color, and padding for the whole page */
+html, body {
+    height: 100%; /* Ensures the page fills the viewport */
+}
+
 body {
-    font-family: 'Poppins', sans-serif; /* Sets the font to Poppins */
-    background-color: #f0f0f0; /* Light gray background for better contrast */
-    line-height: 1.6; /* Improves text readability by increasing line spacing */
-    padding: 1rem; /* Adds padding to avoid content touching the edges of the screen */
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f0f0;
+    line-height: 1.6;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column; /* Footer stays at the bottom */
 }
 
-/* Header Styling */
-/* Positions the header elements (title and hamburger icon) horizontally */
+/* ========== HEADER (BOTH MOBILE AND DESKTOP) ========== */
 .header {
-    display: flex; /* Enables Flexbox layout for alignment */
-    justify-content: space-between; /* Pushes items to opposite ends */
-    align-items: center; /* Vertically centers items */
-    padding: 1rem; /* Adds padding inside the header */
-    color: white; /* Sets text color to white for better contrast */
+    display: flex; 
+    justify-content: space-between;
+    color: white;
 }
 
 /* Site Title Styling */
-/* Controls the appearance of the site title link */
 .site-title a {
-    text-decoration: none; /* Removes underline from the link */
-    color: #0906fa; /* Blue color for the site title */
-    font-weight: 600; /* Semi-bold weight to highlight the title */
-    font-size: 2rem; /* Large font size for visibility */
+    text-decoration: none;
+    color: #0906fa;
+    font-weight: 600;
+    font-size: 2.5rem;
 }
 
-/* Hamburger Icon (Visible only on Mobile) */
-/* Controls the styling of the hamburger menu for smaller screens */
+/* ========== HAMBURGER MENU (MOBILE ONLY) ========== */
 .hamburger {
-    display: flex; /* Flexbox layout to stack the bars vertically */
-    flex-direction: column; /* Aligns bars in a vertical column */
-    gap: 5px; /* Adds space between bars */
-    cursor: pointer; /* Changes the cursor to indicate interactivity */
-    position: relative; /* Allows the hamburger to stay above other content */
-    z-index: 10; /* Ensures it's above other elements when needed */
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    position: relative;
+    z-index: 10;
 }
 
-/* Individual bars inside the hamburger icon */
 .hamburger span {
     display: block;
-    width: 30px; /* Width of the hamburger bar */
-    height: 3px; /* Height of the hamburger bar */
-    background-color: #0906fa; /* Blue color for visibility */
-    transition: all 0.8s ease-in-out; /* Smooth animation when the menu toggles */
-}
-
-/* Active state of the hamburger (when clicked) */
-.hamburger.active span {
-    background-color: white; /* Changes bar color when active */
-}
-
-/* Hides the hamburger menu on larger screens */
-@media (min-width: 768px) {
-    .hamburger {
-        display: none; /* Makes the hamburger invisible on desktops */
-    }
-}
-
-/* Animation for transforming the bars into an 'X' shape */
-.hamburger.active span:nth-child(1) {
-    transform: translateY(8px) rotate(45deg); /* Rotates first bar */
-}
-.hamburger.active span:nth-child(2) {
-    opacity: 0; /* Hides the middle bar */
-}
-.hamburger.active span:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg); /* Rotates third bar */
-}
-
-/* Navigation Menu Styling */
-/* Controls the full-screen menu that slides in on mobile */
-.nav-menu {
-    visibility: hidden; /* Hidden by default */
-    flex-direction: column; /* Stacks menu items vertically */
-    position: fixed; /* Stays fixed in place on scroll */
-    top: 10%; /* Leaves space at the top for better alignment */
-    left: 5%; /* Adds space on the left for aesthetics */
-    width: 90%; /* Width of the menu */
-    height: 80%; /* Height of the menu */
-    background-color: #0906fa; /* Blue background */
-    justify-content: center; /* Centers menu items vertically */
-    align-items: center; /* Centers menu items horizontally */
-    z-index: 9; /* Below the hamburger icon */
-    opacity: 0; /* Invisible initially */
-    border-radius: 20px; /* Rounded corners */
-    transform: scale(0.8); /* Scaled down initially */
-    transition: all 0.8s ease-in-out; /* Smooth transition on activation */
-    padding-top: 4rem; /* Adds space at the top */
-}
-
-/* Navigation List Styling */
-/* Controls the appearance of each item in the menu */
-.nav-list {
-    list-style: none; /* Removes default bullet points */
-    text-align: center; /* Centers text inside the menu */
-    margin: 1rem; /* Adds space between list items */
-}
-
-.nav-list a {
-    text-decoration: none; /* Removes underline from links */
-    color: white; /* White text for better contrast */
-    font-size: 2rem; /* Large font size for readability */
-    transition: all 0.8s ease-in-out; /* Smooth color and scale transition on hover */
-    display: inline-block; /* Ensures padding applies to the whole link */
-}
-
-/* Animation: Slide-in effect for list items */
-.nav-list li {
-    margin-bottom: 1.2rem; /* Space between items */
-    transform: translateY(50px); /* Starts slightly off-screen */
-    opacity: 0; /* Hidden initially */
-    transition: all 0.8s ease-in-out; /* Smooth slide and fade */
-}
-
-/* Active state: List items move into place */
-.nav-menu.active .nav-list li {
-    transform: translateY(0); /* Moves to original position */
-    opacity: 1; /* Becomes visible */
-}
-
-/* Hover effect: Color change and slight zoom */
-.nav-list a:hover {
-    color: #ffcc00; /* Yellow on hover */
-    transform: scale(1.1); /* Zooms slightly */
-}
-
-/* Active Navigation Menu (Mobile) */
-/* Full-screen menu appearance */
-.nav-menu.active {
-    visibility: visible;
-    opacity: 1;
-    transform: scale(1); /* Returns to normal size */
-    border-radius: 0; /* Removes rounded corners */
-    top: 0;
-    left: 0;
-    width: 100%; /* Covers full screen */
-    height: 100%; /* Covers full screen */
-    border: #0906fa solid 1rem; /* White border */
-    font-weight: 900; /* Bold text */
-}
-
-/* Inactive State: Scaling down with rounded corners */
-.nav-menu.inactive {
-    visibility: visible;
-    opacity: 1;
-    border-radius: 20px;
-    transform: scale(0.8);
+    width: 30px;
+    height: 3px;
+    background-color: #0906fa;
     transition: all 0.8s ease-in-out;
 }
 
-/* Desktop Menu: Always visible and horizontal */
+/* Active state of hamburger icon */
+.hamburger.active span {
+    background-color: white;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* ========== HIDE HAMBURGER ICON ON DESKTOP ========== */
 @media (min-width: 768px) {
-    .nav-menu {
-        display: flex;
-        position: static;
-        flex-direction: row; /* Horizontal layout */
-        gap: 2rem; /* Space between items */
-        width: auto;
-        height: auto;
-        background-color: transparent; /* No background */
-        opacity: 1;
+    .hamburger {
+        display: none;
     }
 }
 
-/* Hero Section */
-/* Controls the layout and appearance of the hero section */
+/* ========== NAVIGATION MENU (MOBILE) ========== */
+.nav-menu {
+    visibility: hidden;
+    flex-direction: column;
+    position: fixed;
+    top: 10%; 
+    left: 5%;
+    width: 90%; 
+    height: 80%; 
+    background-color: #0906fa;
+    justify-content: center;
+    align-items: center;
+    z-index: 9;
+    opacity: 0;
+    border-radius: 20px;
+    transform: scale(0.8);
+    transition: all 0.8s ease-in-out;
+    padding-top: 4rem;
+}
+
+/* Active state for mobile menu */
+.nav-menu.active {
+    visibility: visible;
+    opacity: 1;
+    transform: scale(1);
+    border-radius: 0;
+    top: 0;
+    left: 0;
+    width: 100%; 
+    height: 100%; 
+    border: #0906fa solid 1rem;
+    font-weight: 900;
+}
+
+/* Navigation List Styling (Mobile Default) */
+.nav-list {
+    list-style: none;
+    margin: 1rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column; /* Stacked layout for mobile */
+    align-items: center;
+    gap: 1rem;
+}
+
+.nav-list a {
+    text-decoration: none;
+    color: white;
+    font-size: 2rem;
+    transition: all 0.8s ease-in-out;
+    display: inline-block;
+}
+
+.nav-list a:hover {
+    color: #ffcc00;
+    transform: scale(1.1);
+}
+
+/* ========== NAVIGATION MENU (DESKTOP VIEW) ========== */
+@media (min-width: 768px) {
+    .nav-menu {
+        display: flex;
+        visibility: visible;
+        position: static; 
+        background-color: transparent;
+        width: max-content;
+        opacity: 1;
+    }
+
+    .nav-list {
+        align-items: baseline;
+        flex-direction: row; /* Horizontal layout for list items */
+        gap: 2rem;
+        font-weight: bold;
+        
+    }
+    
+    .nav-list a {
+        color: #0906fa;
+    }
+}
+
+/* ========== HERO SECTION ========== */
 .hero {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    gap: 1rem; /* Space between elements */
+    gap: 1rem;
+    margin-bottom: 2rem;
 }
 
-/* Heading inside the Hero Section */
 .hero-text h2 {
-    letter-spacing: -0.3rem; /* Slightly tighter spacing */
-    font-weight: 900; /* Bold font */
-    font-size: 5rem; /* Large font size */
-    margin-bottom: 0.5rem; /* Space below heading */
-    text-align: right; /* Aligns to the right */
+    letter-spacing: -0.3rem;
+    font-weight: 900;
+    font-size: 5rem;
+    margin-bottom: 0.5rem;
+    text-align: right;
     line-height: 1.2;
+    padding: 1.5rem;
 }
 
-/* Styled Initial Letter */
 .hero-text .initial {
-    letter-spacing: -0.3rem;
     color: #0906fa;
 }
 
-/* Paragraph Styling */
 .hero-text p {
     font-size: 1.5rem;
     padding: 0 1rem;
@@ -208,34 +190,49 @@ body {
     text-align: left;
 }
 
-/* Buttons in Hero Section */
+/* Hero Buttons */
+.hero-buttons {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
 .hero-buttons .button {
-    margin: 1rem;
-    padding: 0.8rem 1.2rem;
+    padding: 1rem 2rem;
     background-color: #0906fa;
     color: white;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 1.5rem;
     font-size: 1rem;
+    font-weight: 900;
+    transition: background-color 0.3s, transform 0.2s;
 }
 
-/* Hero Image Styling */
+.hero-buttons .button:hover {
+    background-color: #0071e3;
+    transform: translateY(-3px);
+}
+
+/* Hero Image */
 .hero-content img {
     max-width: 100%;
     height: auto;
     border-radius: 10px;
+    display: block;
+    margin-bottom: 2rem;
 }
 
-/* Footer Styling */
+/* ========== FOOTER ========== */
 footer {
     text-align: center;
     padding: 1rem;
     background-color: #333;
     color: white;
-    margin-top: 2rem;
+    margin-top: auto;
 }
 
-/* Desktop Layout Adjustments */
+/* ========== DESKTOP LAYOUT ADJUSTMENTS ========== */
 @media (min-width: 768px) {
     .hero {
         flex-direction: row;
@@ -254,7 +251,7 @@ footer {
         width: 40%;
     }
 
-    footer {
-        margin-top: 4rem;
+    .hero-buttons .button {
+        padding: 1.2rem 2.5rem;
     }
 }
