@@ -11,8 +11,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Ensure menu resets properly on desktop
     window.addEventListener('resize', () => {
         if (window.innerWidth >= 768) {
-            navMenu.classList.remove('active'); // Ensure the menu is visible on desktop
-            navMenu.style.display = 'flex'; // Keeps it static on desktop
+            navMenu.classList.remove('active');
+            navMenu.style.display = 'flex';
         }
     });
 });

@@ -24,21 +24,23 @@ body {
 .header {
     display: flex; 
     justify-content: space-between;
-    color: white;
+    padding: 1rem;
 }
 
 /* Site Title Styling */
 .site-title a {
     text-decoration: none;
-    color: #0906fa;
     font-weight: 600;
     font-size: 2.5rem;
+    color: #0906fa;
+    align-items: baseline;
 }
 
 /* ========== HAMBURGER MENU (MOBILE ONLY) ========== */
 .hamburger {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     gap: 5px;
     cursor: pointer;
     position: relative;
@@ -55,7 +57,7 @@ body {
 
 /* Active state of hamburger icon */
 .hamburger.active span {
-    background-color: white;
+    background-color: #ffffff;
 }
 
 .hamburger.active span:nth-child(1) {
@@ -82,19 +84,18 @@ body {
     visibility: hidden;
     flex-direction: column;
     position: fixed;
-    top: 10%; 
-    left: 5%;
-    width: 90%; 
-    height: 80%; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background-color: #0906fa;
     justify-content: center;
     align-items: center;
     z-index: 9;
     opacity: 0;
-    border-radius: 20px;
     transform: scale(0.8);
     transition: all 0.8s ease-in-out;
-    padding-top: 4rem;
+    border-radius: 0;
 }
 
 /* Active state for mobile menu */
@@ -103,36 +104,24 @@ body {
     opacity: 1;
     transform: scale(1);
     border-radius: 0;
-    top: 0;
-    left: 0;
-    width: 100%; 
-    height: 100%; 
-    border: #0906fa solid 1rem;
-    font-weight: 900;
 }
 
 /* Navigation List Styling (Mobile Default) */
 .nav-list {
     list-style: none;
-    margin: 1rem;
-    padding: 1rem;
+    margin: 0;
+    padding-top: 8rem;
     display: flex;
-    flex-direction: column; /* Stacked layout for mobile */
+    flex-direction: column;
     align-items: center;
-    gap: 1rem;
+    gap: 2rem;
 }
 
 .nav-list a {
     text-decoration: none;
     color: white;
     font-size: 2rem;
-    transition: all 0.8s ease-in-out;
     display: inline-block;
-}
-
-.nav-list a:hover {
-    color: #ffcc00;
-    transform: scale(1.1);
 }
 
 /* ========== NAVIGATION MENU (DESKTOP VIEW) ========== */
@@ -140,22 +129,23 @@ body {
     .nav-menu {
         display: flex;
         visibility: visible;
-        position: static; 
+        position: static;
         background-color: transparent;
-        width: max-content;
+        width: auto;
+        height: auto;
         opacity: 1;
+        transform: none;
     }
 
     .nav-list {
-        align-items: baseline;
-        flex-direction: row; /* Horizontal layout for list items */
-        gap: 2rem;
-        font-weight: bold;
-        
+        flex-direction: row;
+        padding-top: 0;
     }
-    
+
     .nav-list a {
         color: #0906fa;
+        font-weight: bold;
+        letter-spacing: -0.1rem;
     }
 }
 
@@ -173,9 +163,8 @@ body {
     letter-spacing: -0.3rem;
     font-weight: 900;
     font-size: 5rem;
-    margin-bottom: 0.5rem;
-    text-align: right;
-    line-height: 1.2;
+    text-align: left;
+    line-height: 1;
     padding: 1.5rem;
 }
 
@@ -187,7 +176,7 @@ body {
     font-size: 1.5rem;
     padding: 0 1rem;
     margin: 2rem 0;
-    text-align: left;
+    text-align: center;
 }
 
 /* Hero Buttons */
@@ -220,15 +209,28 @@ body {
     height: auto;
     border-radius: 10px;
     display: block;
-    margin-bottom: 2rem;
+    margin: 0 auto;
+}
+
+/* Wrapper to create the card effect */
+.image-card {
+    padding: 1rem;
+    background-color: white; /* Card background color */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Drop shadow */
+    max-width: 100%; /* Ensures it doesn’t exceed its container */
+    transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+.image-card:hover {
+    transform: translateY(-5px); /* Slightly raises the card on hover */
 }
 
 /* ========== FOOTER ========== */
 footer {
-    text-align: center;
+    text-align: baseline;
     padding: 1rem;
-    background-color: #333;
-    color: white;
+    color: #0906fa;
     margin-top: auto;
 }
 
