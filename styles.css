@@ -24,7 +24,7 @@ body {
 .header {
     display: flex; 
     justify-content: space-between;
-    padding: 1rem;
+    padding: 0.5rem;
 }
 
 /* Site Title Styling */
@@ -135,6 +135,7 @@ body {
         height: auto;
         opacity: 1;
         transform: none;
+        padding-right: 1.5rem;
     }
 
     .nav-list {
@@ -144,7 +145,7 @@ body {
 
     .nav-list a {
         color: #0906fa;
-        font-weight: bold;
+        font-size: 1.7rem;
         letter-spacing: -0.1rem;
     }
 }
@@ -162,7 +163,7 @@ body {
 .hero-text h2 {
     letter-spacing: -0.3rem;
     font-weight: 900;
-    font-size: 5rem;
+    font-size: 6rem;
     text-align: left;
     line-height: 1;
     padding: 1.5rem;
@@ -212,6 +213,13 @@ body {
     margin: 0 auto;
 }
 
+.hero-content {
+    max-width: 100%;
+    height: auto;
+    padding-top: 4rem;
+    margin: 0 auto;
+}
+
 /* Wrapper to create the card effect */
 .image-card {
     padding: 1rem;
@@ -226,12 +234,200 @@ body {
     transform: translateY(-5px); /* Slightly raises the card on hover */
 }
 
+/* ========== CONTACT SECTION ========== */
+#contact {
+    max-width: 900px; /* Increased max width for larger content area */
+    margin: 2rem auto;
+    padding: 1.5rem; /* Slightly more padding for a spacious layout */
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.contact-form {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 0 1.5rem; /* Slightly more padding inside the form */
+}
+
+.contact-info .divider {
+    width: 80%;
+    margin: 1rem auto;
+    border: 2px solid #0906fa;
+    border-radius: 2rem; /* Rounded corners */
+    margin-top: 2rem;
+}
+
+/* Contact Information Section */
+.contact-info {
+    font-size: 0.9rem;
+    padding: 0 1.5rem; /* Matching padding with the form */
+}
+
+/* Ensure labels appear above input fields */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.5rem; /* Space between fields */
+}
+
+/* Make First and Last Name fields 66% width and responsive */
+#first-name,
+#last-name {
+    width: 90%;
+    max-width: 100%; /* Responsive adjustment */
+}
+
+/* Ensure Email and Message fields remain full width */
+#email,
+#message {
+    width: 100%;
+}
+
+
+/* Logo Information Section */
+.contact-info img {
+    width: 25%;
+    margin: auto;
+    display: block;
+}
+
+/* Side-by-side layout on desktop */
+@media (min-width: 768px) {
+    .contact-content {
+        flex-direction: row;
+        gap: 2rem; /* Increase gap between form and info for more spacing */
+    }
+    
+    .contact-form {
+        max-width: 70%; /* Slightly wider form */
+    }
+
+    .contact-info {
+        max-width: 30%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .contact-info img {
+        width: 50%;
+        display: block;
+    }
+}
+
+/* ========== SOCIAL ICONS STYLING ========== */
+.contact-info .social-icons {
+    display: flex;
+    gap: 2rem;
+    margin-left: 0.5rem;
+    }
+
+.contact-info .social-icon {
+    font-size: 2.5rem; /* Icon size */
+    color: #0906fa; /* Icon color */
+    transition: transform 0.3s, color 0.3s; /* Smooth hover effect */
+}
+
+.contact-info .social-icon:hover {
+    transform: scale(1.2); /* Slight zoom on hover */
+    color: #0071e3; /* Hover color */
+}
+
+
+/* ========== CONTACT FORM STYLING ========== */
+#contact h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #0906fa;
+    margin-bottom: 1rem;
+}
+
+#contact p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+#contact form label {
+    font-weight: 400;
+    color: #333;
+}
+
+#contact form input[type="text"],
+#contact form input[type="email"],
+#contact form textarea {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Contact form styling for inputs */
+#contact form input[type="text"] {
+    width: 66%; /* Makes First Name and Last Name inputs 2/3 width */
+    max-width: 66%;
+}
+
+#contact form input[type="email"],
+#contact form textarea {
+    width: 100%; /* Ensures Email and Message fields remain full width */
+}
+
+
+#contact form button {
+    width: 90%;
+    padding: 1rem;
+    background-color: #0906fa;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+
+}
+
+#contact form button:hover {
+    background-color: black;
+}
+
+/* ========== CONTACT INFO LINKS ========== */
+.contact-info h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #0906fa;
+    margin-bottom: 0.5rem;
+}
+
+.contact-info a {
+    color: #0906fa;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
 /* ========== FOOTER ========== */
 footer {
-    text-align: baseline;
+    text-align: right;
     padding: 1rem;
     color: #0906fa;
     margin-top: auto;
+    font-size: 0.7rem;
 }
 
 /* ========== DESKTOP LAYOUT ADJUSTMENTS ========== */
@@ -246,14 +442,17 @@ footer {
     .hero-text {
         width: 50%;
         text-align: left;
-        padding-left: 2rem;
+        padding: 2rem;
+        
     }
 
     .hero-content {
         width: 40%;
+        padding: 2rem;
     }
 
     .hero-buttons .button {
         padding: 1.2rem 2.5rem;
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
     }
 }
