@@ -430,6 +430,130 @@ footer {
     font-size: 0.7rem;
 }
 
+/* ========== PROJECTS PAGE ========== */
+.page-main {
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.page-intro {
+    text-align: center;
+    padding: 1.5rem 1rem 2.5rem;
+}
+
+.page-intro h1 {
+    font-size: 3rem;
+    font-weight: 900;
+    letter-spacing: -0.1rem;
+    margin-bottom: 0.75rem;
+}
+
+.page-intro p {
+    font-size: 1.2rem;
+    color: #444;
+    max-width: 40rem;
+    margin: 0 auto;
+}
+
+#projects, #professional-projects {
+    margin-bottom: 3rem;
+}
+
+#projects h2, #professional-projects h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #0906fa;
+    letter-spacing: -0.05rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #e0e0f8;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+.project {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project:last-child {
+    margin-bottom: 0;
+}
+
+.project-grid .project {
+    margin-bottom: 0;
+    height: 100%;
+}
+
+.project:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.project h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.02rem;
+}
+
+.project p {
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.project p:last-child {
+    margin-bottom: 0;
+}
+
+.project ul {
+    margin: 0 0 1rem 1.25rem;
+}
+
+.project li {
+    margin-bottom: 0.5rem;
+}
+
+.project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: #0906fa;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.project-link::after {
+    content: '\2192';
+    transition: transform 0.2s ease;
+}
+
+.project-link:hover {
+    color: #0071e3;
+    text-decoration: underline;
+}
+
+.project-link:hover::after {
+    transform: translateX(3px);
+}
+
+@media (min-width: 768px) {
+    .project-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 /* ========== DESKTOP LAYOUT ADJUSTMENTS ========== */
 @media (min-width: 768px) {
     .hero {
