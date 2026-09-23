@@ -41,4 +41,36 @@ document.addEventListener('DOMContentLoaded', () => {
             closeMenu();
         }
     });
+
+    // Contact form: hand off to the visitor's own email client via mailto:
+    const contactForm = document.getElementById('contact-form');
+    const contactEmail = 'matthieujgagnon@me.com';
+
+    if (contactForm) {
+        const formStatus = document.getElementById('form-status');
+
+        contactForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            if (!contactForm.reportValidity()) {
+                return;
+            }
+
+            const firstName = document.getElementById('first-name').value.trim();
+            const lastName = document.getElementById('last-name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const message = document.getElementById('message').value.trim();
+
+            const subject = `Message from ${firstName} ${lastName} via portfolio site`;
+            const body = `Name: ${firstName} ${lastName}\nEmail: ${email}\n\n${message}`;
+
+            const mailtoUrl = `mailto:${contactEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+            if (formStatus) {
+                formStatus.textContent = 'Opening your email app…';
+            }
+
+            window.location.href = mailtoUrl;
+        });
+    }
 });
