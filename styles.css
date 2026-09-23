@@ -402,6 +402,21 @@ body {
     background-color: black;
 }
 
+.form-note {
+    font-size: 0.8rem;
+    color: #666;
+    margin-top: 0.75rem;
+    margin-bottom: 0;
+}
+
+.form-status {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #0906fa;
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+}
+
 /* ========== CONTACT INFO LINKS ========== */
 .contact-info h3 {
     font-size: 1.2rem;
