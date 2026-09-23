@@ -472,11 +472,11 @@ footer {
     margin: 0 auto;
 }
 
-#projects, #professional-projects {
+#projects, #experience, #skills {
     margin-bottom: 3rem;
 }
 
-#projects h2, #professional-projects h2 {
+#projects h2, #experience h2, #skills h2 {
     font-size: 1.8rem;
     font-weight: 600;
     color: #0906fa;
@@ -484,6 +484,14 @@ footer {
     margin-bottom: 1.5rem;
     padding-bottom: 0.5rem;
     border-bottom: 2px solid #e0e0f8;
+}
+
+.project p.experience-meta {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #666;
+    margin-top: -0.5rem;
+    margin-bottom: 1rem;
 }
 
 .project-grid {
@@ -569,6 +577,46 @@ footer {
     }
 }
 
+.skills-group {
+    margin-bottom: 2rem;
+}
+
+.skills-group:last-child {
+    margin-bottom: 0;
+}
+
+.skills-group h3 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 0.75rem;
+}
+
+.skills-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin: 0;
+    padding: 0;
+}
+
+.skills-list li {
+    background-color: #ffffff;
+    border: 1px solid #e0e0f8;
+    color: #333;
+    font-size: 0.9rem;
+    padding: 0.4rem 0.9rem;
+    border-radius: 2rem;
+}
+
+.skills-list--pinned li {
+    background-color: #0906fa;
+    border-color: #0906fa;
+    color: #ffffff;
+    font-weight: 600;
+}
+
 /* ========== ABOUT PAGE ========== */
 .about-main {
     max-width: 1100px;
@@ -601,8 +649,17 @@ footer {
     font-size: 2.75rem;
     font-weight: 900;
     letter-spacing: -0.1rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.75rem;
     text-align: center;
+}
+
+.about-text .headline {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #0906fa;
+    text-align: center;
+    margin-bottom: 1.75rem;
+    line-height: 1.5;
 }
 
 .about-text p {
@@ -643,6 +700,10 @@ footer {
     }
 
     .about-text h1 {
+        text-align: left;
+    }
+
+    .about-text .headline {
         text-align: left;
     }
 }
